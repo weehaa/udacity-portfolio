@@ -27,7 +27,7 @@ body {
   color: #2d3c49 !important;
 }
 
-.header {
+header .row {
   padding: 0px 0px 40px;
   margin: 70px 0 40px;
   border-bottom: 5px solid #7d97ad;
