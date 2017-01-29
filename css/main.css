@@ -61,6 +61,11 @@ header h3 {
     text-indent: -999em;
     overflow: hidden;
 }
+
+.front-img {
+  width: 100%;
+}
+
 section {
   margin-bottom: 45px;
 }

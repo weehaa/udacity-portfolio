@@ -1,5 +1,6 @@
 var gulp = require('gulp'),
-    rename = require('gulp-rename');
+    rename = require('gulp-rename'),
+    concat = require('gulp-concat'),
     minifyCSS = require('gulp-minify-css');
 
 // minify CSS task
@@ -10,9 +11,16 @@ gulp.task('styles', function(){
       .pipe(gulp.dest('./'));
 });
 
-// watch task
-gulp.task('watch', function(){
-  gulp.watch('css/*.css', ['styles']);
+//concat all min.css files task
+gulp.task('concat', function(){
+  gulp.src('css/*.min.css')
+      .pipe(concat('style.css'))
+      .pipe(gulp.dest('./css/'))
 });
 
-gulp.task('default', ['styles', 'watch']);
+// watch task
+gulp.task('watch', function(){
+  gulp.watch('css/*.css', ['styles', 'concat']);
+});
+
+gulp.task('default', ['styles', 'concat']);
