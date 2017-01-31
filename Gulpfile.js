@@ -15,12 +15,12 @@ gulp.task('styles', function(){
 gulp.task('concat', function(){
   gulp.src('css/*.min.css')
       .pipe(concat('style.css'))
-      .pipe(gulp.dest('./css/'))
+      .pipe(gulp.dest('./css/'));
 });
 
 // watch task
 gulp.task('watch', function(){
-  gulp.watch('css/*.css', ['styles', 'concat']);
+  gulp.watch('css/*.css', ['styles']);
 });
 
-gulp.task('default', ['styles', 'concat']);
+gulp.task('default', ['styles']);
